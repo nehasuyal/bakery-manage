@@ -150,7 +150,7 @@
     }
     
     .banner {
-      background-image: url('/img/bakery-hero5jpg.jpg');
+      background-image: url('img/bakery-hero5jpg.jpg');
       background-position: center;
       background-size: cover;
       height: 400px;
