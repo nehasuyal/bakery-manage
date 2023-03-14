@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="css/menu-css.css" />
+  <script type="text/javascript" src="js/idex-jawa.js"></script>
+  <title>Menu</title>
+</head>
+
+
+<body>
+
+  <header>
+    <h1 class="fade-in-left">Diligent baker</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact_us.html">Contact</a></li>
+        <li class="dropdown">
+          <button class="dropbtn">Cart (<span id="cart-count">0</span>) - <span id="cart-total">₹0</span></button>
+          <div class="dropdown-content">
+            <ul id="cart-items">
+            </ul>
+            <div class="cart-total">Total: ₹<span id="cart-total-dropdown">0</span></div>
+            <a href="cart.html" class="checkout-btn">Checkout</a>
+          </div>
+        </li>
+
+      </ul>
+    </nav>
+
+  </header>
+  <section id="featured" class="fade-in-left">
+
+    <h2>Our Menu</h2>
+    <ul>
+      <li>
+        <img src="img/croissant.jpg" alt="Croissants">
+        <div>
+          <h3>Croissants</h3>
+          <p>A flaky, buttery pastry that's perfect for breakfast or as a snack.</p>
+          <span> ₹150/per</span>
+          <div>
+            <a href="#" class="btn"
+              onclick="addToCart('Croissants', 150); event.preventDefault(); showSuccessMessage(this)">Add to Cart</a>
+            <a href="#" class="btn">Buy Now</a>
+          </div>
+        </div>
+      </li>
+
+     
+
+      <li>
+        <img src="img/cake.jpg" alt="Chocolate Cake">
+        <div>
+          <h3>Chocolate Cake</h3>
+          <p>A rich, decadent cake made with real cocoa and topped with chocolate ganache.</p>
+          <span>₹600 per KG</span>
+          <div>
+            <a href="#" class="btn"
+              onclick="addToCart('Chocolate Cake', 600); showSuccessMessage(this); event.preventDefault();">Add to
+              Cart</a>
+            <a href="#" class="btn">Buy Now</a>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <img src="img/baguette.jpg" alt="Baguette">
+        <div>
+          <h3>Baguette</h3>
+          <p>A classic French bread with a crispy crust and soft, chewy interior.</p>
+          <span>₹420 per baguette</span>
+          <div>
+            <a href="#" class="btn"
+              onclick="addToCart('baguette', 420); event.preventDefault();  showSuccessMessage(this);">Add to Cart</a>
+            <a href="#" class="btn">Buy Now</a>
+          </div>
+        </div>
+      </li>
+      <li>
+        <img src="img/bread.jpg" alt="Baked Bread">
+        <div>
+          <h3>Baked Bread</h3>
+          <p>Freshly baked bread with a crusty exterior and soft, fluffy interior.</p>
+          <span>₹200 per loaf</span>
+          <div>
+            <a href="#" class="btn"
+              onclick="addToCart('Baked Bread', 200); event.preventDefault();  showSuccessMessage(this);">Add to
+              Cart</a>
+            <a href="#" class="btn">Buy Now</a>
+          </div>
+
+        </div>
+
+      </li>
+      <li>
+        <img src="img/tart.jpg" alt="Fruit Tart">
+        <div>
+          <h3>Fruit Tart</h3>
+          <p>A light, flaky pastry filled with sweet custard and topped with fresh fruit.</p>
+          <span>₹230 per tart</span>
+          <div>
+            <a href="#" class="btn"
+              onclick="addToCart('Fruit Tart', 230); event.preventDefault();  showSuccessMessage(this);">Add to
+              Cart</a>
+            <a href="#" class="btn">Buy Now</a>
+          </div>
+        </div>
+      </li>
+      <li>
+        <img src="img/Cupcakes.jpg" alt="Red Velvet Cupcakes">
+        <div>
+          <h3>Red Velvet Cupcakes</h3>
+          <p>Moist, fluffy cupcakes made with cocoa and topped with cream cheese frosting.</p>
+          <span>₹60 per</span>
+          <div>
+            <a href="#" class="btn"
+              onclick="addToCart( 'Red Velvet Cupcake',60); event.preventDefault();  showSuccessMessage(this);">Add to
+              Cart</a>
+            <a href="#" class="btn">Buy Now</a>
+          </div>
+        </div>
+      </li>
+      <li>
+          <img src="img/menuuu/muffin.jpg" alt="Blueberry Muffin">
+          <h3>Blueberry Muffin</h3>
+          <p>Our blueberry muffins are bursting with fresh blueberries and are a customer favorite.</p>
+          <span class="price">₹250</span>
+          <div>
+            <a href="#" class="btn"
+              onclick="addToCart('blueberry muffin', 250); event.preventDefault();  showSuccessMessage(this);">Add to
+              Cart</a>
+            <a href="#" class="btn">Buy Now</a>
+          </div>
+      </li>
+      <li>
+          <img src="img/menuuu/Bagel.jpg" alt="Bagel">
+          <h3>Bagel</h3>
+          <p>Our bagels are hand-rolled and baked to perfection. They're great with cream cheese or as a sandwich.</p>
+          <span class="price">₹125</span>
+          <div>
+            <a href="#" class="btn"
+              onclick="addToCart('Bagel', 125); event.preventDefault();  showSuccessMessage(this);">Add to Cart</a>
+            <a href="#" class="btn">Buy Now</a>
+          </div>
+      </li>
+      <li>
+          <img src="img/menuuu/Cinnamon.jpg" alt="Cinnamon Roll">
+          <h3>Cinnamon Roll</h3>
+          <p>Our cinnamon rolls are made with a sweet, gooey filling and topped with a creamy glaze.</p>
+          <span class="price">₹230</span>
+          <div>
+            <a href="#" class="btn"
+              onclick="addToCart('Cinnamon Roll', 230); event.preventDefault();  showSuccessMessage(this);">Add to
+              Cart</a>
+            <a href="#" class="btn">Buy Now</a>
+          </div>
+      </li>
+      <li>
+          <img src="img/menuuu/Cheese.jpg" alt="Cheese Danish">
+          <h3>Cheese Danish</h3>
+          <p>Our cheese danishes are made with a flaky pastry crust and a creamy cheese filling.</p>
+          <span class="price">₹60</span>
+          <div>
+            <a href="#" class="btn"
+              onclick="addToCart('Cheese Danish',60); event.preventDefault();  showSuccessMessage(this);">Add to
+              Cart</a>
+            <a href="#" class="btn">Buy Now</a>
+          </div>
+      </li>
+      <li>
+          <img src="img/menuuu/Brownie.jpg" alt="Brownie">
+          <h3>Brownie</h3>
+          <p>Our brownies are rich and fudgy, and are the perfect chocolatey treat.</p>
+          <span class="price">₹165</span>
+          <div>
+            <a href="#" class="btn"
+              onclick="addToCart('Brownie', 165); event.preventDefault();  showSuccessMessage(this);">Add to Cart</a>
+            <a href="#" class="btn">Buy Now</a>
+          </div>
+      </li>
+      <li>
+          <img src="img/menuuu/Cakeslice.jpg" alt="Cake Slice">
+          <h3>Cake Slice</h3>
+          <p>Our cakes are made with high-quality ingredients and are available in a variety of flavors.</p>
+          <span class="price">₹185</span>
+          <div>
+            <a href="#" class="btn"
+              onclick="addToCart('Cake Slice', 185); event.preventDefault();  showSuccessMessage(this);">Add to
+              Cart</a>
+            <a href="#" class="btn">Buy Now</a>
+          </div>
+      </li>
+      <li>
+          <img src="img/menuuu/Pie Slice.jpg" alt="Pie Slice">
+          <h3>Pie Slice</h3>
+          <p>Our pies are made with fresh fruit and a buttery crust. Available in a variety of flavors.</p>
+          <span class="price">₹360</span>
+          <div>
+            <a href="#" class="btn"
+              onclick="addToCart('pie slice', 360); event.preventDefault();  showSuccessMessage(this);">Add to
+              Cart</a>
+            <a href="#" class="btn">Buy Now</a>
+          </div>
+         
+      </li>
+      <li>
+          <img src="img/bread.jpg" alt="Bread">
+          <h3>Bread</h3>
+          <p>Our bread is baked fresh daily and is available in a variety of flavors, including sourdough, whole
+            wheat,
+            and multigrain.</p>
+          <span class="price">₹450</span>
+          <div>
+            <a href="#" class="btn"
+              onclick="addToCart('Bread', 450); event.preventDefault();  showSuccessMessage(this);">Add to Cart</a>
+            <a href="#" class="btn">Buy Now</a>
+          </div>
+      </li>
+    </ul>
+
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <div>
+        <h4>My Bakery Shop</h4>
+
+        <p>----------------Address--------------</p>
+        <p>-----------Phone: no-----------</p>
+      </div>
+      <div>
+        <h4>Hours</h4>
+        <p>Monday - Friday: 6am - 8pm</p>
+        <p>Saturday: 7am - 8pm</p>
+        <p>Sunday: 7am - 6pm</p>
+      </div>
+      <div>
+        <h4>Follow Us</h4>
+        <div class="social-media">
+          <a href="#"><img src="img/facebook.svg" alt="Facebook"></a>
+          <a href="#"><img src="img/twitter.svg" alt="Twitter"></a>
+          <a href="#"><img src="img/instagram.svg" alt="Instagram"></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+</body>
+
+
+</html>

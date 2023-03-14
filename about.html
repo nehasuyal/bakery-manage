@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="css/about-css.css" />
+  <title>About Us</title>
+</head>
+
+<body class="fade-in-left">
+  <header>
+    <h1 class="fade-in-left">Diligent baker</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact_us.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="banner">
+      
+    </section>
+    
+    <section class="content">
+      <h1>About Us</h1>
+      <h2>Our Story</h2>
+      <p>We started our bakery in 2010 with a simple mission: to create delicious baked goods using only the freshest and highest-quality ingredients. Over the years, we've expanded our menu and our team, but our commitment to quality has never wavered.</p>
+      <h2>Our Team</h2>
+      <p>Our team of bakers and pastry chefs are passionate about their craft and dedicated to creating the best possible products for our customers. From our head baker to our newest team members, everyone at our bakery shares a love of baking and a commitment to excellence.</p>
+      
+      <h2>Our Gallery</h2>
+      <div class="gallery-slider">
+        <div class="slide">
+          <img src="img/bakery-hero.jpg" alt="Gallery Image">
+        </div>
+        <div class="slide">
+          <img src="img/bakery-hero2.jpg" alt="Gallery Image">
+        </div>
+        <div class="slide">
+          <img src="img/bakery-hero3.jpg" alt="Gallery Image">
+        </div>
+        <div class="slide">
+          <img src="img/bakery-hero4.jpg" alt="Gallery Image">
+        </div>
+        <button class="prev">Prev</button>
+        <button class="next">Next</button>
+      </div>
+      
+      <h2>Our Ingredients</h2>
+      <p>We source our ingredients from local farms and suppliers whenever possible, and we're always on the lookout for the freshest and most flavorful ingredients. We believe that using high-quality ingredients is the key to creating delicious baked goods that our customers love.</p>
+      <h2>Our Menu</h2>
+      <p>Our menu includes a wide variety of baked goods, including:</p>
+      <ul class="list">
+        <li>Freshly baked bread</li>
+        <li>Delicious cakes</li>
+        <li>Savory pastries</li>
+        <li>Sweet treats</li>
+        <li>Cookies and brownies</li>
+        <li>Custom cakes and cupcakes for special occasions</li>
+        <a href="menu.html"> And Many more  </a>
+      </ul>
+      <h2>Our Commitment to Sustainability</h2>
+      <p>We're committed to minimizing our environmental impact and supporting sustainable practices. We use eco-friendly packaging materials and strive to reduce food waste by donating unsold baked goods to local charities and food banks.</p>
+      <h2>Visit Us</h2>
+      <p>We'd love for you to visit us at our bakery and taste our delicious baked goods for yourself. Come see us at 123 Main Street, and don't forget to follow us on social media for updates on our menu and special offers.</p>
+    
+    
+    
+
+    </section>
+  </main>
+  <footer>
+    <div class="footer-container">
+      <div>
+        <h4>My Bakery Shop</h4>
+
+        <p>----------------Address--------------</p>
+        <p>-----------Phone: no-----------</p>
+      </div>
+      <div>
+        <h4>Hours</h4>
+        <p>Monday - Friday: 6am - 8pm</p>
+        <p>Saturday: 7am - 8pm</p>
+        <p>Sunday: 7am - 6pm</p>
+      </div>
+      <div>
+        <h4>Follow Us</h4>
+        <div class="social-media">
+          <a href="#"><img src="img/facebook.svg" alt="Facebook"></a>
+          <a href="#"><img src="img/twitter.svg" alt="Twitter"></a>
+          <a href="#"><img src="img/instagram.svg" alt="Instagram"></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+<script>
+const slider = document.querySelector('.gallery-slider');
+const slides = slider.querySelectorAll('.slide');
+const prevBtn = slider.querySelector('.prev');
+const nextBtn = slider.querySelector('.next');
+let currentSlide = 0;
+let intervalId;
+
+function showSlide() {
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].classList.remove('active');
+  }
+  slides[currentSlide].classList.add('active');
+}
+
+function slidePrev() {
+  currentSlide--;
+  if (currentSlide < 0) {
+    currentSlide = slides.length - 1;
+  }
+  showSlide();
+}
+
+function slideNext() {
+  currentSlide++;
+  if (currentSlide >= slides.length) {
+    currentSlide = 0;
+  }
+  showSlide();
+}
+
+function startSlider() {
+  intervalId = setInterval(slideNext, 5000);
+}
+
+function stopSlider() {
+  clearInterval(intervalId);
+}
+
+prevBtn.addEventListener('click', () => {
+  slidePrev();
+  stopSlider();
+});
+
+nextBtn.addEventListener('click', () => {
+  slideNext();
+  stopSlider();
+});
+
+startSlider();
+const textItems = document.querySelectorAll('.changing-text-item');
+let activeIndex = 0;
+
+setInterval(() => {
+  textItems[activeIndex].classList.remove('active');
+  activeIndex = (activeIndex + 1) % textItems.length;
+  textItems[activeIndex].classList.add('active');
+}, 3000);
+
+
+
+</script>
