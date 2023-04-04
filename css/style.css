@@ -291,7 +291,7 @@
   #featured li:hover {
     
     transform: scale(1.1) rotate(3deg);
-    box-shadow: 0px 0px 15px rgba(0, 0, 1, 0.3);
+    box-shadow: 0px 0px 15px #03f7544d;
   }
 
   #featured li img {
@@ -563,4 +563,35 @@ left: 20px;
 
 .gallery-slider button.next {
 right: 20px;
+}
+#values, #services {
+  margin-top: 50px;
+  padding: 20px;
+  background-color: #f7f7f7;
+}
+
+#values h2, #services h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  text-align: center;
+}
+
+#values li, #services li {
+  margin-bottom: 15px;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+#values strong, #services strong {
+  font-weight: bold;
+}
+
+#services li:last-child {
+  margin-bottom: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  #values li, #services li {
+    font-size: 16px;
+  }
 }

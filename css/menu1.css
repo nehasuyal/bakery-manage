@@ -1,0 +1,480 @@
+
+body {
+    margin: 0;
+    padding: 20px;
+    background-image: url("img/bakery-hero4.jpg");
+    background-size: cover;
+    font-family: Arial, sans-serif;
+}
+
+@keyframes fade-in-left {
+    0% {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  
+  }
+  
+  
+  header {
+    background-color: #f0ecec;
+    padding: 16px;
+  }
+  
+  .fade-in-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    animation-name: fade-in-left;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+  }
+  h1 {
+    font-size: 2rem;
+    margin: 0;
+  }
+  .pra{
+    font-family: "Playfair Display", serif !important;
+  }
+  
+  nav {
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  nav li {
+    margin: 0 10px;
+  }
+  
+  nav a {
+    color: #555;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+    display: block;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  nav a:hover {
+    color: #53A05A;
+    background-color: #F7F7F7;
+  }
+  
+  
+.center{
+    margin: 100px 0px 200px 0px;
+    width: 50%;
+    margin-left: 10%;
+    align-items: center;
+    background-color: lightgrey;
+    border-radius: 10px;
+    border-width: 1px;
+    border-style: solid;
+    box-shadow: 10px 10px 100px 30px black;
+    border-color: black;
+
+}
+
+
+.dropbtn {
+    background-color: #3498DB;
+    color: white;
+    padding: 16px;
+    width: 100%;
+    height: 70px;
+    font-size: 16px;
+    cursor: url(icon.png),pointer;
+    font-size: larger;
+}
+
+/* Style the dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: cornsilk;
+    max-width: 60%;
+    z-index: 1;
+    border-radius: 10px;
+    border-width: 1px;
+    border-style: solid;
+    box-shadow: 10px 10px 100px 30px black;
+    border-color: black;
+}
+
+/* Styling for links in dropdown menu */
+.dropdown-content ul {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Styling for active menu item */
+.dropdown-content ul .active {
+    background-color: #966262;
+}
+
+/* Styling for links in dropdown menu when hovering */
+.dropdown-content a:hover {
+    background-color: #f1c1c1;
+}
+
+/* Add some spacing between the menu items */
+.dropdown-content ul li {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.6 ease-in-out;
+}
+
+/* Style the cake item image */
+.dropdown-content ul li img {
+    display: inline-block;
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    margin-right:10px;
+    border-radius: 50%;
+}
+
+    /* Style the Cinnamon Roll item */
+.dropdown-content ul li h3 {
+margin-top: 0;
+margin-bottom: 10px;
+font-size: 24px;
+color: #333;
+}
+
+.dropdown-content ul li p {
+margin: 0;
+font-size: 16px;
+color: #666;
+}
+
+.dropdown-content ul li .price {
+margin-right: 10px;
+font-weight: bold;
+font-size: 18px;
+color: #333;
+}
+
+.dropdown-content ul li div {
+margin-top: 20px;
+}
+
+.dropdown-content ul li div a {
+margin-right: 10px;
+background-color: #4CAF50;
+color: white;
+padding: 8px 16px;
+border-radius: 5px;
+text-decoration: none;
+font-size: 14px;
+transition: background-color 0.3s ease;
+}
+.dropdown-content ul li div a.btn {
+    color: black;
+}
+.dropdown-content ul li div a.btn:hover {
+background-color: black;
+color: wheat;
+
+}
+
+/* Make the Cinnamon Roll item more attractive */
+.dropdown-content ul li:hover {
+background-color: #f9f9f9;
+border-radius: 10px;
+padding: 20px;
+box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-content ul li:hover img {
+width: 100px;
+height: 100px;
+}
+
+.dropdown-content ul li:hover h3 {
+font-size: 20px;
+margin-bottom: 5px;
+}
+
+.dropdown-content ul li:hover .price {
+font-weight: bold;
+font-size: 18px;
+margin-bottom: 10px;
+}
+
+.dropdown-content ul li:hover div {
+display: flex;
+align-items: center;
+}
+
+.cart {
+    position: fixed;
+   
+    min-width: 200px;
+    top: 80px;
+    right: 20px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+   
+  }
+  
+  .cart h4 {
+    margin-top: 0;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  #cart-items {
+    margin: 10px 0;
+  }
+  
+  #cart-items div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  #cart-items img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 10px;
+  }
+  
+  #cart-items button {
+    border: none;
+    background-color: #fff;
+    color: #f00;
+    cursor: pointer;
+  }
+  
+  #cart-total {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .chekout{
+    
+    color: #b67cb3;
+    text-decoration: none;
+    font-size: larger;
+    float: right;
+    transition: 0.8s ease-in-out;
+}
+.chekout:hover{
+    background-color: #ccc;
+  color: #333;
+}
+
+.show {
+    display: block;
+}
+.checkout {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    border-radius: 5px;
+  }
+  
+  .checkout h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0 0 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input {
+    display: block;
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  button[type="submit"] {
+    display: block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #f00;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #f33;
+  }
+  
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 30px 20px;
+    background-color: #f1f1f1;
+  }
+  
+  /* Style the footer content */
+  .footer-container div {
+    flex-basis: calc(33.33% - 20px);
+    margin-bottom: 20px;
+  }
+  
+  /* Style the footer headings */
+  .footer-container h4 {
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #333;
+  }
+  
+  /* Style the footer paragraphs */
+  .footer-container p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  /* Style the social media icons */
+  .social-media a {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  .social-media img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0px 0px 5px #ccc;
+  }
+  
+  
+  .social-media img:hover {
+    transform: scale(1.2);
+    transition: transform 0.2s ease-in-out;
+  }
+ 
+ 
+  .cart {
+    margin-bottom: 20px;
+  }
+  /* Center modal vertically and horizontally */
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    width: 300px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Make modal background semi-transparent */
+  .modal-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none; /* hide by default */
+  }
+ 
+  /* Show modal when modal-bg is clicked */
+  .modal-bg.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+  }
+
+  .bill {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    width: 400px;
+    padding: 20px;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
+  }
+  
+  .user_detail {
+    margin-bottom: 20px;
+  }
+  
+  .user_detail div {
+    margin-bottom: 10px;
+  }
+  
+  .user_detail div:before {
+    content: attr(id) ": ";
+    font-weight: bold;
+  }
+  
+  .items h3,
+  .total h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .btn2 {
+    text-align: center;
+  }
+  
+  .btn2 a,.btn2 button{
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+  }
+  .btn2 button:hover{
+   background-color: #555;
+  }
+  .btn2 a:hover{
+    background-color: #555;
+  } 
+.show1{
+  display: none;
+}

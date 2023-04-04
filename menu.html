@@ -1,259 +1,485 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="css/menu-css.css" />
-  <script type="text/javascript" src="js/idex-jawa.js"></script>
-  <title>Menu</title>
-</head>
+	<!DOCTYPE html>
+	<html lang="en">
 
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+		<link rel="stylesheet" href="css/menu1.css">
+		<title>Dropdown Menu</title>
+	</head>
 
 <body>
+	<header>
+		<h1 class="fade-in-left">Diligent baker</h1>
+		<nav>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="menu.html">Menu</a></li>
+				<li><a href="about.html">About</a></li>
+				<li><a href="contact_us.html">Contact</a></li>
 
-  <header>
-    <h1 class="fade-in-left">Diligent baker</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="menu.html">Menu</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact_us.html">Contact</a></li>
-        <li class="dropdown">
-          <button class="dropbtn">Cart (<span id="cart-count">0</span>) - <span id="cart-total">₹0</span></button>
-          <div class="dropdown-content">
-            <ul id="cart-items">
-            </ul>
-            <div class="cart-total">Total: ₹<span id="cart-total-dropdown">0</span></div>
-            <a href="cart.html" class="checkout-btn">Checkout</a>
-          </div>
-        </li>
+			</ul>
+		</nav>
 
-      </ul>
-    </nav>
+	</header>
 
-  </header>
-  <section id="featured" class="fade-in-left">
+	<div class="cart">
+		<h4>Your Cart..</h4>
+		<div id="cart-items"></div>
+		<div>Total: <br> <span id="cart-total">0</span></div>
+		<button id="checkout-btn">Checkout</button>
+	</div>
 
-    <h2>Our Menu</h2>
-    <ul>
-      <li>
-        <img src="img/croissant.jpg" alt="Croissants">
-        <div>
-          <h3>Croissants</h3>
-          <p>A flaky, buttery pastry that's perfect for breakfast or as a snack.</p>
-          <span> ₹150/per</span>
-          <div>
-            <a href="#" class="btn"
-              onclick="addToCart('Croissants', 150); event.preventDefault(); showSuccessMessage(this)">Add to Cart</a>
-            <a href="#" class="btn">Buy Now</a>
-          </div>
-        </div>
-      </li>
 
-     
 
-      <li>
-        <img src="img/cake.jpg" alt="Chocolate Cake">
-        <div>
-          <h3>Chocolate Cake</h3>
-          <p>A rich, decadent cake made with real cocoa and topped with chocolate ganache.</p>
-          <span>₹600 per KG</span>
-          <div>
-            <a href="#" class="btn"
-              onclick="addToCart('Chocolate Cake', 600); showSuccessMessage(this); event.preventDefault();">Add to
-              Cart</a>
-            <a href="#" class="btn">Buy Now</a>
-          </div>
-        </div>
-      </li>
+	<div class="modal-bg " >
+		<div class="modal">
+			<h2 style="text-align: center;">Checkout</h2>
+			<form id="checkout-form" action="menu.php" method="post">
+			
 
-      <li>
-        <img src="img/baguette.jpg" alt="Baguette">
-        <div>
-          <h3>Baguette</h3>
-          <p>A classic French bread with a crispy crust and soft, chewy interior.</p>
-          <span>₹420 per baguette</span>
-          <div>
-            <a href="#" class="btn"
-              onclick="addToCart('baguette', 420); event.preventDefault();  showSuccessMessage(this);">Add to Cart</a>
-            <a href="#" class="btn">Buy Now</a>
-          </div>
-        </div>
-      </li>
-      <li>
-        <img src="img/bread.jpg" alt="Baked Bread">
-        <div>
-          <h3>Baked Bread</h3>
-          <p>Freshly baked bread with a crusty exterior and soft, fluffy interior.</p>
-          <span>₹200 per loaf</span>
-          <div>
-            <a href="#" class="btn"
-              onclick="addToCart('Baked Bread', 200); event.preventDefault();  showSuccessMessage(this);">Add to
-              Cart</a>
-            <a href="#" class="btn">Buy Now</a>
-          </div>
 
-        </div>
+				<div class="form-group">
+					<label for="name">Name</label>
+					<input type="text" id="name" name="name" required>
+				</div>
+				<div class="form-group">
+					<label for="email">Email</label>
+					<input type="email" id="email" name="email" required>
+				</div>
+				<div class="form-group">
+					<label for="address">Phone</label>
+					<input type="text" id="Phone" name="Phone" required>
+				</div>
+				<div class="form-group">
+					<label for="address">Address</label>
+					<input type="text" id="address" name="address" required>
+				</div>
+				<button type="submit" id="cont"  >continue</button>
+			  
+			</form>
+		</div>
+	</div>
+	<div class="model_bg">
+		<div class="bill show1" id="bill">
+		  <h3>Company Name</h3>
+		  <div class="user_detail">
+			<div class="user_Name" id="user-name"></div>
+			<div class="user_Email" id="user-email"></div>
+		  </div>
+		  <div>
+			<h3>items</h3>
+			<div class="items" id="cart-items-bill"></div>
+			<div class="items_price" id="cart-items-price"></div>
+		  </div>
+		  <div>
+			<div class="discount">
+				<h3>Discount</h3>
+				<div class="discount_amount " id="discount-amount" ></div>
+			  </div>
+			
+			<h1>total</h1>
+			<div class="total " id="cart-total-bill"></div>
+		  </div>
+		 
+		  <div class="btn2">
+			<a href="">Back to home</a>
+			<button type="button" id="confirm-order-btn" onclick="displayConfirmation()">conform Your Odder</button>
 
-      </li>
-      <li>
-        <img src="img/tart.jpg" alt="Fruit Tart">
-        <div>
-          <h3>Fruit Tart</h3>
-          <p>A light, flaky pastry filled with sweet custard and topped with fresh fruit.</p>
-          <span>₹230 per tart</span>
-          <div>
-            <a href="#" class="btn"
-              onclick="addToCart('Fruit Tart', 230); event.preventDefault();  showSuccessMessage(this);">Add to
-              Cart</a>
-            <a href="#" class="btn">Buy Now</a>
-          </div>
-        </div>
-      </li>
-      <li>
-        <img src="img/Cupcakes.jpg" alt="Red Velvet Cupcakes">
-        <div>
-          <h3>Red Velvet Cupcakes</h3>
-          <p>Moist, fluffy cupcakes made with cocoa and topped with cream cheese frosting.</p>
-          <span>₹60 per</span>
-          <div>
-            <a href="#" class="btn"
-              onclick="addToCart( 'Red Velvet Cupcake',60); event.preventDefault();  showSuccessMessage(this);">Add to
-              Cart</a>
-            <a href="#" class="btn">Buy Now</a>
-          </div>
-        </div>
-      </li>
-      <li>
-          <img src="img/menuuu/muffin.jpg" alt="Blueberry Muffin">
-          <h3>Blueberry Muffin</h3>
-          <p>Our blueberry muffins are bursting with fresh blueberries and are a customer favorite.</p>
-          <span class="price">₹250</span>
-          <div>
-            <a href="#" class="btn"
-              onclick="addToCart('blueberry muffin', 250); event.preventDefault();  showSuccessMessage(this);">Add to
-              Cart</a>
-            <a href="#" class="btn">Buy Now</a>
-          </div>
-      </li>
-      <li>
-          <img src="img/menuuu/Bagel.jpg" alt="Bagel">
-          <h3>Bagel</h3>
-          <p>Our bagels are hand-rolled and baked to perfection. They're great with cream cheese or as a sandwich.</p>
-          <span class="price">₹125</span>
-          <div>
-            <a href="#" class="btn"
-              onclick="addToCart('Bagel', 125); event.preventDefault();  showSuccessMessage(this);">Add to Cart</a>
-            <a href="#" class="btn">Buy Now</a>
-          </div>
-      </li>
-      <li>
-          <img src="img/menuuu/Cinnamon.jpg" alt="Cinnamon Roll">
-          <h3>Cinnamon Roll</h3>
-          <p>Our cinnamon rolls are made with a sweet, gooey filling and topped with a creamy glaze.</p>
-          <span class="price">₹230</span>
-          <div>
-            <a href="#" class="btn"
-              onclick="addToCart('Cinnamon Roll', 230); event.preventDefault();  showSuccessMessage(this);">Add to
-              Cart</a>
-            <a href="#" class="btn">Buy Now</a>
-          </div>
-      </li>
-      <li>
-          <img src="img/menuuu/Cheese.jpg" alt="Cheese Danish">
-          <h3>Cheese Danish</h3>
-          <p>Our cheese danishes are made with a flaky pastry crust and a creamy cheese filling.</p>
-          <span class="price">₹60</span>
-          <div>
-            <a href="#" class="btn"
-              onclick="addToCart('Cheese Danish',60); event.preventDefault();  showSuccessMessage(this);">Add to
-              Cart</a>
-            <a href="#" class="btn">Buy Now</a>
-          </div>
-      </li>
-      <li>
-          <img src="img/menuuu/Brownie.jpg" alt="Brownie">
-          <h3>Brownie</h3>
-          <p>Our brownies are rich and fudgy, and are the perfect chocolatey treat.</p>
-          <span class="price">₹165</span>
-          <div>
-            <a href="#" class="btn"
-              onclick="addToCart('Brownie', 165); event.preventDefault();  showSuccessMessage(this);">Add to Cart</a>
-            <a href="#" class="btn">Buy Now</a>
-          </div>
-      </li>
-      <li>
-          <img src="img/menuuu/Cakeslice.jpg" alt="Cake Slice">
-          <h3>Cake Slice</h3>
-          <p>Our cakes are made with high-quality ingredients and are available in a variety of flavors.</p>
-          <span class="price">₹185</span>
-          <div>
-            <a href="#" class="btn"
-              onclick="addToCart('Cake Slice', 185); event.preventDefault();  showSuccessMessage(this);">Add to
-              Cart</a>
-            <a href="#" class="btn">Buy Now</a>
-          </div>
-      </li>
-      <li>
-          <img src="img/menuuu/Pie Slice.jpg" alt="Pie Slice">
-          <h3>Pie Slice</h3>
-          <p>Our pies are made with fresh fruit and a buttery crust. Available in a variety of flavors.</p>
-          <span class="price">₹360</span>
-          <div>
-            <a href="#" class="btn"
-              onclick="addToCart('pie slice', 360); event.preventDefault();  showSuccessMessage(this);">Add to
-              Cart</a>
-            <a href="#" class="btn">Buy Now</a>
-          </div>
-         
-      </li>
-      <li>
-          <img src="img/bread.jpg" alt="Bread">
-          <h3>Bread</h3>
-          <p>Our bread is baked fresh daily and is available in a variety of flavors, including sourdough, whole
-            wheat,
-            and multigrain.</p>
-          <span class="price">₹450</span>
-          <div>
-            <a href="#" class="btn"
-              onclick="addToCart('Bread', 450); event.preventDefault();  showSuccessMessage(this);">Add to Cart</a>
-            <a href="#" class="btn">Buy Now</a>
-          </div>
-      </li>
-    </ul>
+		  </div>
+		</div>
+	  </div>
+	  
 
-  </section>
 
-  <footer>
-    <div class="footer-container">
-      <div>
-        <h4>My Bakery Shop</h4>
+	<div class="center">
+		<div class="dropdown">
+			<button class="dropbtn">Cake</button>
+			<div class="dropdown-content">
 
-        <p>----------------Address--------------</p>
-        <p>-----------Phone: no-----------</p>
-      </div>
-      <div>
-        <h4>Hours</h4>
-        <p>Monday - Friday: 6am - 8pm</p>
-        <p>Saturday: 7am - 8pm</p>
-        <p>Sunday: 7am - 6pm</p>
-      </div>
-      <div>
-        <h4>Follow Us</h4>
-        <div class="social-media">
-          <a href="#"><img src="img/facebook.svg" alt="Facebook"></a>
-          <a href="#"><img src="img/twitter.svg" alt="Twitter"></a>
-          <a href="#"><img src="img/instagram.svg" alt="Instagram"></a>
-        </div>
-      </div>
-    </div>
-  </footer>
+				<ul>
+					<li>
+						<img src="img/cake.jpg" alt="Chocolate Cake">
+						<div>
+							<h3>Chocolate Cake</h3>
+							<p>A rich, decadent cake made with real cocoa and topped with chocolate...... </p>
+							<span class="price">₹600 per KG</span>
+							<div>
+								<a href="#" class="btn"
+									onclick="addToCart('Chocolate Cake', 600); event.preventDefault();">Add to
+									Cart</a>
+							</div>
+						</div>
+					</li>
+
+					<li>
+						<img src="img/menuuu/Cakeslice.jpg" alt="Cake Slice">
+						<h3>Cake Slice</h3>
+						<p>Our cakes are made with high-quality ingredients and are available in a variety of
+							flavors.
+						</p>
+						<span class="price">₹185</span>
+						<div>
+							<a href="#" class="btn"
+								onclick="addToCart( 'Cake Slice' , 185 );event.preventDefault();">Add to
+								Cart</a>
+
+						</div>
+					</li>
+					<li>
+						<img src="img/Cupcakes.jpg" alt="Red Velvet Cupcakes">
+						<div>
+							<h3>Red Velvet Cupcakes</h3>
+							<p>Moist, fluffy cupcakes made with cocoa and topped with cream cheese frosting.</p>
+							<span class="price">₹60 per</span>
+							<div>
+								<a href="#" class="btn"
+									onclick="addToCart( 'Red Velvet Cupcakes', 60 );event.preventDefault();">Add
+									to Cart</a>
+							</div>
+						</div>
+					</li>
+
+					<li>
+						<img src="img/StrawberryShortcake.jpg" alt="Strawberry Shortcake">
+						<div>
+							<h3>Strawberry Shortcake</h3>
+							<p>A classic cake made with fresh strawberries, whipped cream, and a light sponge cake.
+							</p>
+							<span class="price">₹700 per KG</span>
+							<div>
+								<a href="#" class="btn"
+									onclick="addToCart( 'Strawberry Shortcake', 700 );event.preventDefault();">Add
+									to
+									Cart</a>
+							</div>
+						</div>
+					</li>
+
+					<li>
+						<img src="img/baguette.jpg" alt="Blueberry Muffin">
+						<div>
+							<h3>Blueberry Muffin</h3>
+							<p>A delicious breakfast treat made with fresh blueberries and a light, fluffy batter.
+							</p>
+							<span class="price">₹40 per</span>
+							<div>
+								<a href="#" class="btn"
+									onclick="addToCart('Blueberry Muffin', 40 );event.preventDefault();">Add
+									to
+									Cart</a>
+							</div>
+						</div>
+					</li>
+					<li>
+						<img src="img/CarrotCake.jpg" alt="Carrot Cake">
+						<div>
+							<h3>Carrot Cake</h3>
+							<p>A moist and flavorful cake made with grated carrots, spices, and cream cheese
+								frosting.
+							</p>
+							<span class="price">₹650 per KG</span>
+							<div>
+								<a href="#" class="btn"
+									onclick="addToCart(  'Carrot Cake', 650 );event.preventDefault();">Add to
+									Cart</a>
+							</div>
+						</div>
+					</li>
+				</ul>
+
+
+
+			</div>
+		</div>
+
+		<div class="dropdown">
+			<button class="dropbtn">Bread</button>
+			<div class="dropdown-content">
+				<ul>
+					<li>
+						<img src="img/bread1.jpg" alt="Whole Wheat Bread">
+						<div>
+							<h3>Whole Wheat Bread</h3>
+							<p>A healthy and delicious bread made with whole wheat flour.</p>
+							<span class="price">₹50 per loaf</span>
+							<div>
+								<a href="#" class="btn"
+									onclick="addToCart( 'Whole Wheat Bread',  50 );event.preventDefault();">Add to
+									Cart</a>
+							</div>
+						</div>
+					</li>
+					<li>
+
+						<div>
+							<h3>Sourdough Bread</h3>
+							<img src="img/bread2.jpg" alt="Sourdough Bread">
+							<p>A crusty and flavorful bread made with a natural yeast starter and a long
+								fermentation
+								process.</p>
+							<span class="price">₹150 per loaf</span>
+							<div>
+								<a href="#" class="btn"
+									onclick="addToCart( 'Sourdough Bread',  150 );event.preventDefault();">Add
+									to
+									Cart</a>
+							</div>
+						</div>
+					</li>
+					<li>
+						<h3>Baguette</h3>
+						<img src="img/baguette.jpg" alt="Baguette">
+						<p>A classic French bread with a crisp crust and a soft interior, perfect for sandwiches or
+							alongside a meal.</p>
+						<span class="price">₹50 per loaf</span>
+						<div>
+							<a href="#" class="btn" onclick="addToCart( 'Baguette',  50 );event.preventDefault();">Add
+								to Cart</a>
+						</div>
+					</li>
+					<li>
+						<h3>Brioche</h3>
+						<img src="img/brioche.jpg" alt="Brioche">
+						<p>A rich and buttery bread made with eggs and milk, perfect for toasting or making French
+							toast.</p>
+						<span class="price">₹120 per loaf</span>
+						<div>
+							<a href="#" class="btn" onclick="addToCart( 'Brioche', 120);event.preventDefault();">Add
+								to
+								Cart</a>
+						</div>
+					</li>
+					<li>
+						<h3>Focaccia</h3>
+						<img src="img/focaccia.jpg" alt="Focaccia">
+						<p>An Italian flatbread topped with olive oil, herbs, and sometimes cheese or vegetables.
+						</p>
+						<span class="price">₹80 per loaf</span>
+						<div>
+							<a href="#" class="btn" onclick="addToCart( 'Focaccia',  80 );event.preventDefault();">Add
+								to Cart</a>
+						</div>
+					</li>
+
+					<li>
+						<h3>Rye Bread</h3>
+						<img src="img/rye.jpg" alt="Rye Bread">
+						<p>A dense and flavorful bread made with rye flour and often mixed with other grains like
+							wheat
+							or barley.</p>
+						<span class="price">₹130 per loaf</span>
+						<div>
+							<a href="#" class="btn" onclick="addToCart( 'Rye Bread',  130 );event.preventDefault();">Add
+								to
+								Cart</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="dropdown">
+			<button class="dropbtn">Chocolate</button>
+			<div class="dropdown-content">
+				<ul>
+					<li>
+						<h3>Milk Chocolate</h3>
+						<img src="img/MilkChocolate.jpg" alt="Milk Chocolate">
+						<p>Milk chocolate is known for its smooth and creamy texture, which is a result of the added
+							milk powder or condensed milk</p>
+						<span class="price">₹185</span>
+						<div>
+							<a href="#" class="btn"
+								onclick="addToCart('Milk Chocolate', 185);event.preventDefault();">Add to Cart</a>
+						</div>
+					</li>
+					<li>
+						<h3>Dark Chocolate</h3>
+						<img src="img/DarkChocolate.jpg" alt="Dark Chocolate">
+						<p>Dark chocolate is made from cocoa solids and has a rich, intense flavor. It also has less
+							sugar than milk chocolate.</p>
+						<span class="price">₹200</span>
+						<div>
+							<a href="#" class="btn"
+								onclick="addToCart('Dark Chocolate', 200);event.preventDefault();">Add to Cart</a>
+						</div>
+					</li>
+					<li>
+						<h3>White Chocolate</h3>
+						<img src="img/WhiteChocolate.jpg" alt="White Chocolate">
+						<p>White chocolate is made from cocoa butter, sugar, and milk solids. It has a sweet and
+							creamy
+							flavor and a smooth texture.</p>
+						<span class="price">₹250</span>
+						<div>
+							<a href="#" class="btn"
+								onclick="addToCart('White Chocolate', 250);event.preventDefault();">Add to Cart</a>
+						</div>
+					</li>
+					<li>
+						<h3>Caramel Chocolate</h3>
+						<img src="img/CaramelChocolate.jpg" alt="Caramel Chocolate">
+						<p>Caramel chocolate has a rich, buttery caramel flavor that complements the sweetness of
+							the
+							chocolate.</p>
+						<span class="price">₹220</span>
+						<div>
+							<a href="#" class="btn"
+								onclick="addToCart('Caramel Chocolate', 220);event.preventDefault();">Add to
+								Cart</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="dropdown">
+			<button class="dropbtn">Cold Drinks</button>
+			<div class="dropdown-content">
+				<ul>
+					<li>
+						<h3>Coca-Cola</h3>
+						<img src="img/CocaCola.jpg" alt="Coca-Cola">
+						<p>Coca-Cola is a carbonated soft drink that is enjoyed by millions around the world. It has
+							a
+							sweet, refreshing taste that is perfect for any occasion.</p>
+						<span class="price">₹30</span>
+						<div>
+							<a href="#" class="btn" onclick="addToCart('Coca-Cola', 30);event.preventDefault();">Add
+								to
+								Cart</a>
+						</div>
+					</li>
+					<li>
+						<h3>Pepsi</h3>
+						<img src="img/Pepsi.jpg" alt="Pepsi">
+						<p>Pepsi is another popular carbonated soft drink that has a slightly sweeter taste than
+							Coca-Cola. It is perfect for those who prefer a sweeter beverage.</p>
+						<span class="price">₹30</span>
+						<div>
+							<a href="#" class="btn" onclick="addToCart('Pepsi', 30);event.preventDefault();">Add to
+								Cart</a>
+						</div>
+					</li>
+					<li>
+						<h3>Lemonade</h3>
+						<img src="img/Lemonade.jpg" alt="Lemonade">
+						<p>Lemonade is a non-carbonated beverage that is made by mixing lemon juice, water, and
+							sugar.
+							It has a tart and refreshing taste that is perfect for hot summer days.</p>
+						<span class="price">₹40</span>
+						<div>
+							<a href="#" class="btn" onclick="addToCart('Lemonade', 40);event.preventDefault();">Add
+								to
+								Cart</a>
+						</div>
+					</li>
+					<li>
+						<h3>Iced Tea</h3>
+						<img src="img/Iced Tea.jpg" alt="Iced Tea">
+						<p>Iced tea is a refreshing beverage that is made by steeping tea leaves in hot water and
+							then
+							chilling the mixture. It is perfect for those who want a non-carbonated beverage with a
+							mild
+							taste.</p>
+						<span class="price">₹45</span>
+						<div>
+							<a href="#" class="btn" onclick="addToCart('Iced Tea', 45);event.preventDefault();">Add
+								to
+								Cart</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="dropdown">
+			<button class="dropbtn">Decorative Items</button>
+			<div class="dropdown-content">
+				<ul>
+					<li>
+						<h3>Candles</h3>
+						<img src="img/candles.jpg" alt="Candles">
+						<p>Candles are a popular decorative item that can be used to add warmth and ambiance to any
+							space. They come in a variety of scents and colors to suit any mood or occasion.</p>
+						<span class="price">₹100</span>
+						<div>
+							<a href="#" class="btn" onclick="addToCart('Candles', 100);event.preventDefault();">Add
+								to Cart</a>
+						</div>
+					</li>
+					<li>
+						<h3>balloons</h3>
+						<img src="img/balloons.jpg" alt="balloons">
+						<p>Flower vases are a classic decorative item that can be used to display fresh or
+							artificial flowers. They come in a variety of shapes and sizes to suit any decor style.
+						</p>
+						<span class="price">₹250</span>
+						<div>
+							<a href="#" class="btn" onclick="addToCart('Flower Vases', 250);event.preventDefault();">Add
+								to Cart</a>
+						</div>
+					</li>
+					<li>
+						<h3>party propz</h3>
+						<img src="img/partypropz.jpg" alt="party propz">
+						<p>Pillows are a versatile decorative item that can be used to add comfort and style to any
+							room. They come in a variety of shapes, sizes, and colors to suit any decor style.</p>
+						<span class="price">₹350</span>
+						<div>
+							<a href="#" class="btn" onclick="addToCart('Pillows', 350);event.preventDefault();">Add
+								to Cart</a>
+						</div>
+					</li>
+					<li>
+						<h3>Wall Art</h3>
+						<img src="img/wallart.jpg" alt="Wall Art">
+						<p>Wall art is a popular decorative item that can be used to add personality and style to
+							any room. It comes in a variety of styles, including paintings, prints, and posters.</p>
+						<span class="price">₹500</span>
+						<div>
+							<a href="#" class="btn" onclick="addToCart('Wall Art', 500);event.preventDefault();">Add
+								to Cart</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+	</div>
+
+	<footer>
+		<div class="footer-container">
+			<div>
+				<h4>My Bakery Shop</h4>
+
+				<p>----------------Address--------------</p>
+				<p>-----------Phone: no-----------</p>
+			</div>
+			<div>
+				<h4>Hours</h4>
+				<p>Monday - Friday: 6am - 8pm</p>
+				<p>Saturday: 7am - 8pm</p>
+				<p>Sunday: 7am - 6pm</p>
+			</div>
+			<div>
+				<h4>Follow Us</h4>
+				<div class="social-media">
+					<a href="#"><img src="img/facebook.svg" alt="Facebook"></a>
+					<a href="#"><img src="img/twitter.svg" alt="Twitter"></a>
+					<a href="#"><img src="img/instagram.svg" alt="Instagram"></a>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<script type="text/javascript" src="js/menu1.js"></script>
 
 
 </body>
-
 
 </html>

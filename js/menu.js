@@ -1,60 +1,55 @@
-let cart = [];
-let cartCount = 0;
-let cartTotal = 0;
+// Define cart items array
+let cartItems = [];
 
-function addToCart(itemName, itemPrice) {
-    cart.push({ name: itemName, price: itemPrice });
-cartCount++;
-cartTotal += itemPrice;
-updateCart();
-}
+// Get cart elements
+const cartItemsList = document.getElementById('cart-items');
+const cartTotal = document.getElementById('cart-total');
 
+// Add event listener to each item's 'Add to cart' button
+document.querySelectorAll('li button').forEach((addToCartButton) => {
+  addToCartButton.addEventListener('click', () => {
+    // Get item name and price
+    const itemName = addToCartButton.parentNode.querySelector('span.item-name').textContent;
+    const itemPrice = Number(addToCartButton.parentNode.querySelector('span.item-price').textContent.split('$')[1]);
+
+    // Add item to cart items array
+    cartItems.push({
+      name: itemName,
+      price: itemPrice
+    });
+
+    // Update cart
+    updateCart();
+  });
+});
+
+// Function to update cart
 function updateCart() {
-    document.getElementById("cart-count").innerHTML = cartCount;
-document.getElementById("cart-total").innerHTML = "₹" + cartTotal;
-}
-function addToCart(itemName, itemPrice) {
-    cart.push({ name: itemName, price: itemPrice });
-cartCount++;
-cartTotal += itemPrice;
-updateCart();
-updateDropdownCart();
-}
+  // Clear cart items list
+  cartItemsList.innerHTML = '';
 
-function updateDropdownCart() {
-    let dropdownCart = document.getElementById("cart-items");
-dropdownCart.innerHTML = "";
-cart.forEach(item => {
-    let li = document.createElement("li");
-let span = document.createElement("span");
-span.innerHTML = item.name + " - ₹" + item.price;
-li.appendChild(span);
-dropdownCart.appendChild(li);
-});
-document.getElementById("cart-total-dropdown").innerHTML = cartTotal;
-}
+  // Add cart items to list
+  cartItems.forEach((item) => {
+    const li = document.createElement('li');
+    li.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+    const removeButton = document.createElement('button');
+    removeButton.textContent = 'X';
+    removeButton.addEventListener('click', () => {
+      // Remove item from cart items array
+      cartItems = cartItems.filter((cartItem) => {
+        return cartItem.name !== item.name;
+      });
 
-/* Close the dropdown if the user clicks outside of it */
-window.onclick = function(event) {
-if (!event.target.matches('.dropbtn')) {
-    let dropdowns = document.getElementsByClassName("dropdown-content");
-for (let i = 0; i < dropdowns.length; i++) {
-    let openDropdown = dropdowns[i];
-if (openDropdown.classList.contains('show')) {
-    openDropdown.classList.remove('show');
-}
-}
-}
-}
+      // Update cart
+      updateCart();
+    });
+    li.appendChild(removeButton);
+    cartItemsList.appendChild(li);
+  });
 
-/* Open the dropdown when the user clicks on the cart button */
-document.querySelector(".dropbtn").addEventListener("click", function() {
-    document.querySelector(".dropdown-content").classList.toggle("show");
-});
-function showSuccessMessage() {
-var message = document.getElementById("success-message");
-message.style.display = "block";
-setTimeout(function() {
-    message.style.display = "none";
-}, 2000); // hide the message after 2 seconds
+  // Update cart total
+  const total = cartItems.reduce((accumulator, currentItem) => {
+    return accumulator + currentItem.price;
+  }, 0);
+  cartTotal.textContent = total.toFixed(2);
 }
