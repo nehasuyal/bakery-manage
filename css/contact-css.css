@@ -40,6 +40,12 @@
     }
 
   }
+.adm{
+  width: 100px;
+  margin-left: 150px;
+  margin-bottom: -53px;
+  margin-right: -35px;
+}
 
 
   h1 {
@@ -218,8 +224,9 @@
   #contact .mapouter {
     position: relative;
     height: 450px;
-    margin-bottom: 20px;
+    margin-bottom: 300px;
     margin-left: 500px;
+    margin-top: -589px;
   }
   
   #contact .gmap_canvas {

@@ -1,7 +1,7 @@
 
 body {
     margin: 0;
-    padding: 20px;
+    padding: 0px;
     background-image: url("img/bakery-hero4.jpg");
     background-size: cover;
     font-family: Arial, sans-serif;
@@ -46,7 +46,12 @@ body {
     background-color: #fff;
     border-bottom: 1px solid #ccc;
   }
-  
+  .bg_pic {
+    background-image: url(../img/bakery-hero5jpg.jpg);
+    height: 700px;
+    background-repeat: no-repeat;
+    padding-top: 45px;
+  }
   nav ul {
     margin: 0;
     padding: 0;
